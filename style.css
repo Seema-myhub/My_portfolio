@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center; /* Center-align all text */
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: fixed;
+    top: 5rem; /* Adjusted to place it below the nav bar */
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Sections General Styling */
+section {
+    padding: 4rem 2rem;
+    position: relative;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background-color: #4CAF50;
+}
+
+section:last-child::after {
+    display: none; /* Remove line after the last section */
+}
+
+/* Home Section */
+
+/* Home Section */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+    position:relative;
+    text-align: left; /* Align text to the left */
+}
+
+.dark-mode #home {
+    background-color: #1e1e1e;
+}
+
+.intro-text {
+    max-width: 50%; /* Limit text width */
+}
+
+.intro-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-button {
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-image {
+    width: 300px; /* Fixed width for the image */
+    height: 300px; /* Fixed height for the image */
+    border-radius: 50%; /* Make the image round */
+    overflow: hidden; /* Ensure the image stays within the round shape */
+    border: 5px solid #4CAF50; /* Add a border around the image */
+}
+
+.home-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the round shape */
+}
+
+/* Responsive Design for Home Section */
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column; /* Stack text and image vertically on smaller screens */
+        text-align: center; /* Center-align text on smaller screens */
+    }
+
+    .intro-text {
+        max-width: 100%; /* Full width for text on smaller screens */
+        margin-bottom: 2rem; /* Add space between text and image */
+    }
+
+    .home-image {
+        width: 200px; /* Smaller image for mobile */
+        height: 200px;
+    }
+}
+
+/* About Section */
+#about {
+    background-color: #ffffff;
+}
+
+.dark-mode #about {
+    background-color: #1e1e1e;
+}
+
+#about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#about h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Education Section */
+#education {
+    background-color: #f4f4f4;
+}
+
+.dark-mode #education {
+    background-color: #1e1e1e;
+}
+
+.edu-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    background-color:#ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: calc(33% - 2rem);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color:#121212;
+}
+
+.edu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Section */
+#skills {
+    background-color: #ffffff;
+}
+
+.dark-mode #skills {
+    background-color: #1e1e1e;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-category {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: calc(33% - 2rem);
+    text-align: center;
+    color: #121212;
+}
+
+.skills-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f4f4f4;
+}
+
+.dark-mode #contact {
+    background-color: #1e1e1e;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.resume-btn {
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Scroll to Top Button */
+#scroll-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color:green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .edu-card, .skills-category {
+        width: calc(50% - 1rem);
+    }
+
+    .intro-text, #about p {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .edu-card, .skills-category {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #dark-mode-toggle {
+        top: 7rem; /* Adjust for smaller screens */
+    }
+}
